@@ -78,7 +78,7 @@ df = pd.DataFrame({
     "time": np.arange(total_samples) / sample_rate,
     "adc": adc_data
 })
-df.to_csv("C:/Scratch/stabilizer-analysis/data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP1_KI0001.csv", index=False)
+df.to_csv("./data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP1_KI0001.csv", index=False)
 
 
 # # Find FFT
