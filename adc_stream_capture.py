@@ -54,7 +54,7 @@ for data in buffers:
     header = StabilizerStream.header._make(header_tuple)
     frame = parser.set_frame(header, data[8:])
     values = frame.to_si()
-    adc_samples = values[0]
+    adc_samples = values[1]
 
     adc_samples_master.extend(adc_samples)
     counter += len(adc_samples)
@@ -78,7 +78,7 @@ df = pd.DataFrame({
     "time": np.arange(total_samples) / sample_rate,
     "adc": adc_data
 })
-df.to_csv("./data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP1_KI0001.csv", index=False)
+df.to_csv("./data/adc1_capture_10to5packets.csv", index=False)
 
 
 # # Find FFT

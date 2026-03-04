@@ -7,7 +7,7 @@ from scipy.signal import welch
 def load_data(path):
     return pd.read_csv(path)
 
-paths = ["data/adc_capture_10to5packets_noCS.csv", "data/adc_capture_10to5packets_CS_Voff036_noPSU.csv", "data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP0_KI0.csv", "data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP6_KI0.csv", "data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP1_KI0001.csv", "data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP12_KI20.csv"]
+paths = ["data/adc_capture_10to5packets_noCS.csv", "data/adc_capture_10to5packets_CS_Voff036_noPSU.csv", "data/PI/adc_capture_10to5packets_CS_Voff0_noPSU_KP0_KI0.csv", "data/PI/adc_capture_10to5packets_CS_Voff077_PSU_KP0_KI0.csv", "data/adc1_capture_10to5packets.csv"]
 plt.figure(figsize=(8,5))
 for path in paths:
 
@@ -45,5 +45,5 @@ plt.ylabel("Amplitude Spectral Density (dBV / √Hz)")
 plt.title("Noise Spectral Density")
 plt.grid(True, which="both")
 # plt.xlim((0,10**4))
-plt.legend(["Noise Floor Stabilizer", "Noise Floor Stabilizer + Current Sense", "I=0.08A, no FB, Voff = 0.77V", "FB (Kp, Ki) = (6,0)", "FB (Kp, Ki) = (1,0.001)", "FB (Kp, Ki) = (12,20)"])
+plt.legend(["Noise Floor Stabilizer", "Noise Floor Stabilizer + Current Sense (PSU Off Voff 0.36V)", "Noise Floor Stabilizer + Current Sense (PSU Off Voff 0.0V)", "I=0.08A no FB, Voff = 0.77V", "ADC1"])
 plt.show()
